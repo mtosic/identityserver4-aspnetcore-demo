@@ -1,8 +1,10 @@
-﻿using IdentityServer4.Models;
+﻿using IdentityServer4;
+using IdentityServer4.Models;
 using IdentityServer4.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace IdentityServer4Demo
@@ -37,7 +39,7 @@ namespace IdentityServer4Demo
                     // scopes that client has access to
                     AllowedScopes = { "api1" }
                 },
-                        // resource owner password grant client
+                // resource owner password grant client
                 new Client
                 {
                     ClientId = "ro.client",
@@ -48,6 +50,25 @@ namespace IdentityServer4Demo
                         new Secret("secret".Sha256())
                     },
                     AllowedScopes = { "api1" }
+                },
+                        // OpenID Connect implicit flow client (MVC)
+                new Client
+                {
+                    ClientId = "mvc",
+                    ClientName = "MVC Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+
+                    // where to redirect to after login
+                    RedirectUris = { "http://localhost:5002/signin-oidc" },
+
+                    // where to redirect to after logout
+                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+
+                    AllowedScopes = new List<string>
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    }
                 }
             };
         }
@@ -60,14 +81,35 @@ namespace IdentityServer4Demo
                 {
                     SubjectId = "1",
                     Username = "marko",
-                    Password = "proteron"
+                    Password = "proteron",
+
+                    Claims = new []
+                    {
+                        new Claim("name", "Marko"),
+                        new Claim("website", "http://www.proteron.hr")
+                    }
                 },
                 new TestUser
                 {
                     SubjectId = "2",
                     Username = "dario",
-                    Password = "proteron"
+                    Password = "proteron",
+
+                    Claims = new []
+                    {
+                        new Claim("name", "Dario"),
+                        new Claim("website", "http://www.proteron.hr")
+                    }
                 }
+            };
+        }
+
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile(),
             };
         }
     }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.ConsoleClientCredent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.ConsoleResourceOwnerPassword", "Client.ConsoleResourceOwnerPassword\Client.ConsoleResourceOwnerPassword.csproj", "{C404D67B-EA5C-489C-9313-3FD9F703FDB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.MVCImplicit", "Client.MVCImplicit\Client.MVCImplicit.csproj", "{8F4CC025-C668-4476-9D36-E898083BA1FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C404D67B-EA5C-489C-9313-3FD9F703FDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C404D67B-EA5C-489C-9313-3FD9F703FDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C404D67B-EA5C-489C-9313-3FD9F703FDB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F4CC025-C668-4476-9D36-E898083BA1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4CC025-C668-4476-9D36-E898083BA1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4CC025-C668-4476-9D36-E898083BA1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4CC025-C668-4476-9D36-E898083BA1FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
