@@ -1,4 +1,5 @@
 ﻿using IdentityServer4.Models;
+using IdentityServer4.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,37 @@ namespace IdentityServer4Demo
 
                     // scopes that client has access to
                     AllowedScopes = { "api1" }
+                },
+                        // resource owner password grant client
+                new Client
+                {
+                    ClientId = "ro.client",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = { "api1" }
+                }
+            };
+        }
+
+        public static List<TestUser> GetUsers()
+        {
+            return new List<TestUser>
+            {
+                new TestUser
+                {
+                    SubjectId = "1",
+                    Username = "marko",
+                    Password = "proteron"
+                },
+                new TestUser
+                {
+                    SubjectId = "2",
+                    Username = "dario",
+                    Password = "proteron"
                 }
             };
         }
