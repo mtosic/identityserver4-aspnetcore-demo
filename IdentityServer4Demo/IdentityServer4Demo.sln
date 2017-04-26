@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4Demo", "IdentityServer4Demo\IdentityServer4Demo.csproj", "{798365F0-A9F8-4B6C-A183-BCAE1FDB59C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{CFEA20FE-C696-466D-9219-A380D4C026A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.ConsoleClientCredentials", "Client.ConsoleClientCredentials\Client.ConsoleClientCredentials.csproj", "{B1B84201-D420-40FC-9AED-C6884AB1F400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{798365F0-A9F8-4B6C-A183-BCAE1FDB59C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{798365F0-A9F8-4B6C-A183-BCAE1FDB59C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{798365F0-A9F8-4B6C-A183-BCAE1FDB59C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFEA20FE-C696-466D-9219-A380D4C026A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEA20FE-C696-466D-9219-A380D4C026A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEA20FE-C696-466D-9219-A380D4C026A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEA20FE-C696-466D-9219-A380D4C026A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B84201-D420-40FC-9AED-C6884AB1F400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B84201-D420-40FC-9AED-C6884AB1F400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B84201-D420-40FC-9AED-C6884AB1F400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B84201-D420-40FC-9AED-C6884AB1F400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
