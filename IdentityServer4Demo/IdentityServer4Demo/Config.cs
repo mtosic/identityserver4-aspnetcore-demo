@@ -51,7 +51,7 @@ namespace IdentityServer4Demo
                     },
                     AllowedScopes = { "api1" }
                 },
-                        // OpenID Connect implicit flow client (MVC)
+                // OpenID Connect implicit flow client (MVC)
                 new Client
                 {
                     ClientId = "mvc",
@@ -69,8 +69,31 @@ namespace IdentityServer4Demo
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile
                     }
+                },
+                // OpenID Connect hybrid flow client (MVC)
+                new Client
+                {
+                    ClientId = "mvc.hybrid",
+                    ClientName = "MVC Client",
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+
+                    RedirectUris           = { "http://localhost:5003/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://localhost:5003/signout-callback-oidc" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
+                    },
+                    AllowOfflineAccess = true
                 }
-            };
+        };
         }
 
         public static List<TestUser> GetUsers()
